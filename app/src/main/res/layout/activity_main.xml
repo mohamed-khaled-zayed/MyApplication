@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="user"
+            type="com.binarycase.mohamed.myapplication.MainActivity.User"/>
+
+        <variable
+            name="handlers"
+            type="com.binarycase.mohamed.myapplication.MainActivity.MyHandlers"/>
+
+        <variable
+            name="click"
+            type="com.binarycase.mohamed.myapplication.MainActivity.Presenter"/>
+    </data>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="#ccc"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello World!"
+            android:id="@+id/text"
+            android:textColor="#000"
+            />
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Click Here"
+            android:background="#ff0"
+            android:onClick="@{handlers::onClickFriend}"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Click"
+            android:background="#ff0"
+            android:onClick="@{() -> click.onSaveClick(user)}"
+            />
+
+    </LinearLayout>
+</layout>
